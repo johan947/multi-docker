@@ -1,7 +1,6 @@
-langauge: generic
+langauge: javascript
 
 sudo: required
-
 services:
   - docker
 
