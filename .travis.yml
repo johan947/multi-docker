@@ -1,0 +1,26 @@
+language: generic
+
+sudo: required
+services:
+  - docker
+
+before install:
+  - docker build -t jonny321/multidocker -f ./client/Dockerfile.dev ./client
+
+  script:
+  - docker run -e CI=true jonny321/multidocker npm test
+
+after_success:
+  - docker build -t jonny321/multi-client ./client
+  - docker build -t jonny321/multi-nginx ./nginx
+  - docker build -t jonny321/multi-server ./server
+  - docker build -t jonny321/multi-worker ./worker
+  # log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stndin
+  # take those images and push them to docker hub
+  - docker push jonny321/multi-client
+  - docker push jonny321/multi-nginx
+  - docker push jonny321/multi-server
+  - docker push jonny321/multi-worker
+
+
