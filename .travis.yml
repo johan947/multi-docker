@@ -1,4 +1,4 @@
-langauge: javascript
+langauge: generic
 
 sudo: required
 services:
