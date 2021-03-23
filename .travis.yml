@@ -1,4 +1,4 @@
-langauge: node.js
+langauge: generic
 
 sudo: required
 services:
