@@ -1,5 +1,4 @@
 langauge: node.js
-
 sudo: required
 services:
   - docker
