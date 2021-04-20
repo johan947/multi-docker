@@ -1,6 +1,6 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "contanerDefenitions": [
+    "containerDefenitions": [
         {
             "name": "client",
             "image": "jonny321/multi-client",
